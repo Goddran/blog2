@@ -53,6 +53,23 @@
                     <div class="ui orange basic left pointing label">编程</div>
                     <div class="ui orange basic left pointing label">写作</div>
                 </div>
+                <div class="ui attached segment">
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">ssm</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">springboot</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">mysql</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">html</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">...</div>
+                </div>
+                <div class="ui bottom attached segment">
+                    <a href="#" class="ui circular icon button"><i class="github icon"></i></a>
+                    <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
+                    <a href="#" class="ui qq circular icon button" data-content="1104015065"
+                       data-position="bottom center"><i class="qq icon"></i></a>
+                </div>
+                <div class="ui wechat-qr flowing popup transition hidden">
+                    <img src="../static/image/wechat.jpg" th:src="@{/image/wechat.jpg}" alt="" class="ui rounded image"
+                         style="width: 110px">
+                </div>
             </div>
         </div>
     </div>
@@ -107,6 +124,12 @@
     $(".menu.toggle").click(function () {
         $(".m-item").toggleClass("m-mobile-hide");
     });
+
+    $('.wechat').popup({
+        popup: $('.wechat-qr'),
+        position: 'bottom center'
+    });
+    $('.qq').popup();
 </script>
 
 </body>

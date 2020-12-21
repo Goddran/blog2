@@ -54,7 +54,7 @@
             <div class="ui padded vertical segment m-padded-tb-large" th:each="blog:${page.content}">
                 <div class="ui middle aligned mobile reversed stackable grid">
                     <div class="eleven wide column">
-                        <h3 class="ui header"><a href="#" class="m-black" th:href="@{/blog/{id}(id=${blog.id})}"
+                        <h3 class="ui header"><a href="#" class="m-black" th:href="@{/blog/id={id}(id=${blog.id})}"
                                                  target="_blank" th:text="${blog.title}">你真的理解……</a></h3>
                         <p class="m-text" th:text="|${blog.description}......|">
                             正确做好任何一件事都是不若能够以的正确做好任何一件事都是不若能够以的正确做好任何一件事都是不若能够以的正确做好任何一件事都是不若能够以的正确做好任何一件事都是不若能够以的正确做好任何一件事都是不若能够以的</p>
@@ -83,8 +83,8 @@
                         </div>
                     </div>
                     <div class="five wide column">
-                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
-                            <img src="../static/image/chara01.jpg" th:src="@{$(blog.firstPicture)}" alt=""
+                        <a href="#" th:href="@{/blog/id={id}(id=${blog.id})}" target="_blank">
+                            <img src="../static/image/chara01.jpg" th:src="@{${blog.firstPicture}}" alt=""
                                  class="ui rounded image m-image">
                         </a>
                     </div>
@@ -101,12 +101,11 @@
                    class="ui mini teal basic button">上一页</a>
             </div>
             <div class="right aligned column">
-                <a th:href="@{/(page=${page.number}+1)}" th:unless="${page.first}"
+                <a th:href="@{/(page=${page.number}+1)}" th:unless="${page.last}"
                    class="ui mini teal basic button">下一页</a>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <br>

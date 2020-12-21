@@ -13,5 +13,8 @@ spring:
         enabled: true #允许上传文件
         max-file-size: 200MB
         max-request-size: 200MB
+    messages:
+      basename: i18n/messages
 
+comment.avatar: /images/me.jpg
 

@@ -94,7 +94,7 @@ public class BlogController {
         blog.setUser((User) session.getAttribute("user"));
         blog.setType(typeService.getType(blog.getType().getId()));
         //for(Tag tag:tagService.listTag()){
-        //    if (!blog.getTagIds().equals(tag)){
+        //    if (blog.getTagIds().equals(tag)){
         //        tagService.
         //    }
         //}
@@ -122,6 +122,7 @@ public class BlogController {
         attributes.addFlashAttribute("message", "删除成功");
         return REDIRECT_LIST;
     }
+
 
     /**
      * 上传附件
