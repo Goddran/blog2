@@ -2,19 +2,19 @@ spring:
   thymeleaf:
     mode: HTML
   datasource:
-    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/blog?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowMultiQueries=true
     username: root
     password: root
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: true
-  logging:
-    file:
-      name: log-pro.log
-      classpath: log/log-pro.log
-    level:
-      com.blog: info
-  rsocket:
-    server:
-      port: 80
+
+logging:
+  file:
+    path: log
+  level:
+    root: warn
+
+server:
+  port: 80
